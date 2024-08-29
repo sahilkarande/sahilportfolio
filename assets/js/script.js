@@ -195,3 +195,43 @@ document.querySelectorAll('[data-src]').forEach(img => {
   img.addEventListener('click', () => openModal(img));
 });
 
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var form = this;
+  var spinner = document.querySelector('.loading-spinner');
+  var alertBox = document.querySelector('.alert');
+
+  spinner.style.display = 'block';
+  alertBox.style.display = 'none';
+
+  var formData = new FormData(form);
+
+  fetch('send.php', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      spinner.style.display = 'none';
+      if (data.status === 'success') {
+          alertBox.className = 'alert success';
+          alertBox.textContent = data.message;
+      } else {
+          alertBox.className = 'alert error';
+          alertBox.textContent = data.message;
+      }
+      alertBox.style.display = 'block';
+      setTimeout(() => {
+          alertBox.style.display = 'none';
+      }, 2000); // Hide message after 2 seconds
+  })
+  .catch(error => {
+      spinner.style.display = 'none';
+      alertBox.className = 'alert error';
+      alertBox.textContent = 'An unexpected error occurred. Please try again later.';
+      alertBox.style.display = 'block';
+      setTimeout(() => {
+          alertBox.style.display = 'none';
+      }, 2000); // Hide message after 2 seconds
+  });
+});
