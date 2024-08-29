@@ -28,7 +28,7 @@
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
           <figure class="avatar-box">
-            <img src="assets/images/Passport_photo.jpg" alt="Sahil Karande" data-src="assets/images/Passport_photo.jpg" onclick="openModal(this)">
+            <img src="assets/images/dp2.png" alt="Sahil Karande" data-src="assets/images/Passport_photo.jpg" onclick="openModal(this)">
             <ion-icon name="eye-outline" class="eye-icon"></ion-icon>
           </figure>
           <div class="info-content">
