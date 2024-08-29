@@ -1,0 +1,194 @@
+<article class="portfolio" data-page="portfolio">
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+  <section class="projects">
+    <ul class="filter-list">
+      <li class="filter-item">
+        <button class="active" data-filter-btn="All">All</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn="Web Development">Web Development</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn="Data Science">Data Science</button>
+      </li>
+    </ul>
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-select-value>Select category</div>
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+      </button>
+      <ul class="select-list">
+        <li class="select-item">
+          <button data-select-item="All">All</button>
+        </li>
+        <li class="select-item">
+          <button data-select-item="Web Development">Web Development</button>
+        </li>
+        <li class="select-item">
+          <button data-select-item="Data Science">Data Science</button>
+        </li>
+      </ul>
+    </div>
+    <ul class="project-list">
+    
+    <!-- project 1 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="./assets/images/furrifyweb.jpg" alt="Furrifyweb" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Furrify- A Pet Community</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+    <!-- project 2 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\Apnabankweb (1).png" alt="Apna Bank" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Apna Bank</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+      <!-- project 3 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\basicportfolio (1).png" alt="Basic Portfolio" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Basic Portfolio</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+      <!-- project 4 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\encipherX.png" alt="EncipherX" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">EncipherX Website</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+      <!-- project 5 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\happiness.png" alt="Online Student Mentoring System" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Happiness Center - Online Student Mentoring System</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+      <!-- project 6 -->
+      <li class="project-item active" data-filter-item data-category="Web Development">
+        
+        <a href="#"> 
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\GDSC.png" alt="GDSC Website" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">GDSC Website</h3>
+            
+            <p class="project-category">Web Development</p>
+        </a>
+        
+      </li>
+
+
+
+      <!-- project 1 -->
+      <li class="project-item active" data-filter-item data-category="Data Science">
+         <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\stocksproject (1).png" alt="Stocks Prediction For BSE And NSE Companies" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Stocks Prediction For BSE And NSE Companies</h3>
+            
+            <p class="project-category">Data Science</p>
+      </li>
+
+      <!-- project 2 -->
+      <li class="project-item active" data-filter-item data-category="Data Science">
+         <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\walmart.png" alt="Walmart Sales Prediction Dashboard" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Walmart Sales Prediction Dashboard</h3>
+            
+            <p class="project-category">Data Science</p>
+      </li>
+
+      <!-- project 3 -->
+      <li class="project-item active" data-filter-item data-category="Data Science">
+         <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="assets\images\drugclassification (1).png" alt="Drug Classification" loading="lazy">
+            </figure>
+        
+            <h3 class="project-title">Drug Classification</h3>
+            
+            <p class="project-category">Data Science</p>
+      </li>
+
+
+      <!-- Add more project items here -->
+    </ul>
+  </section>
+</article>
