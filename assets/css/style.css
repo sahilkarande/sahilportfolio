@@ -1264,13 +1264,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f4f4f4;
-  border-radius: 8px;
-}
+
 
 .form-input {
   width: 100%;
