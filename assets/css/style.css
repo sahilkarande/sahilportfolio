@@ -1611,7 +1611,7 @@
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.close:hover,
+.close: hover,
 .close:focus {
   color: #bbb;
   text-decoration: none;
