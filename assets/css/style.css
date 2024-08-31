@@ -1621,3 +1621,31 @@
 .eye-icon {
   cursor: pointer;
 }
+
+.info-box {
+  background-color: #333;
+  color: #FFDB70;
+  padding: 13px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 300px;
+  animation: blink 5s ease-in-out forwards;
+}
+
+.info-text {
+  font-size: 12px;
+  margin: 0;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .info-box {
+      padding: 15px;
+      font-size: 14px;
+  }
+}
