@@ -1,3 +1,91 @@
+<?php
+session_start(); // Start session to use session variables
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
+
+$successMessage = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
+    // Sanitize and retrieve form data
+    $fullname = htmlspecialchars(trim($_POST['fullname']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $phone = htmlspecialchars(trim($_POST['phone'])); // Phone number field
+    $message = htmlspecialchars(trim($_POST['message']));
+
+    $mail = new PHPMailer(true);
+
+    try {
+        // SMTP settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'skarande248@gmail.com'; // Your email
+        $mail->Password = 'uxwvmjcfyhlvxynl'; // Your email app password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
+
+        // Send notification to the recipient
+        $mail->setFrom($email, $fullname);
+        $mail->addAddress('skarande248@gmail.com', 'Recipient Name'); // Replace with the recipient's email
+
+        // Content for the recipient
+        $mail->isHTML(true);
+        $mail->Subject = 'New Contact Form Submission';
+        $body = '<h2 style="color: #333;">Contact Form Submission</h2>';
+        $body .= '<p><strong>Full Name:</strong> ' . $fullname . '</p>';
+        $body .= '<p><strong>Email:</strong> ' . $email . '</p>';
+        $body .= '<p><strong>Phone:</strong> ' . $phone . '</p>'; // Include phone number
+        $body .= '<p><strong>Message:</strong></p>';
+        $body .= '<blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 10px; margin: 10px 0;">' . nl2br($message) . '</blockquote>';
+        $body .= '<p style="color: #777;">This email was generated from the contact form on your website.</p>';
+
+        $mail->Body = $body;
+
+        // Send the email to the recipient
+        $mail->send();
+
+        // Send confirmation email to the user
+        $mail->clearAddresses(); // Clear previous addresses
+        $mail->addAddress($email, $fullname); // Add user's email
+
+        $mail->Subject = 'We Have Received Your Message';
+        $confirmationBody = '<h2 style="color: #333;">Thank You for Contacting Us!</h2>';
+        $confirmationBody .= '<p>Dear ' . $fullname . ',</p>';
+        $confirmationBody .= '<p>Thank you for reaching out to us. Your message has been successfully received. We will get back to you shortly.</p>';
+        $confirmationBody .= '<p><strong>Your Message:</strong></p>';
+        $confirmationBody .= '<blockquote style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 10px; margin: 10px 0;">' . nl2br($message) . '</blockquote>';
+        $confirmationBody .= '<p>If you have any questions or need further assistance, please feel free to reach out to us.</p>';
+        $confirmationBody .= '<p>Best regards,<br>Your Company Name<br>Your Contact Information</p>'; // Customize with your company name
+
+        $mail->Body = $confirmationBody;
+
+        // Send the confirmation email
+        $mail->send();
+
+        // Set success message in session
+        $_SESSION['success'] = 'Your message has been sent successfully!';
+
+        // Redirect to the same page to reset the form
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit; // Exit to prevent further script execution
+    } catch (Exception $e) {
+        echo '<div style="background-color: #f2dede; color: #a94442; border: 1px solid #ebccd1; border-radius: 5px; padding: 10px;">Oops! Something went wrong and your message could not be sent. Please try again later.<br>Error Message: ' . $mail->ErrorInfo . '</div>';
+    }
+}
+
+// Check for success message in session and display it
+if (isset($_SESSION['success'])) {
+    echo '<script>alert("' . $_SESSION['success'] . '");</script>';
+    unset($_SESSION['success']); // Remove the success message from session
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1279,7 +1367,7 @@
           </ul>
         </section>
       </article>
-      <script></script>
+      
       <!--
           - #CONTACT
           -->
@@ -1297,12 +1385,13 @@
           </figure>
         </section>
         <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <div class="form-container">
-        <form id="contact-form" action="" method="post">
+    <h3 class="h3 form-title">Contact Form</h3>
+    <div class="form-container">
+        <form id="contact-form" action="index.php" method="post">
             <div class="input-wrapper">
                 <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
                 <input type="email" name="email" class="form-input" placeholder="Email address" required>
+                <input type="text" name="phone" class="form-input" placeholder="Phone number" required> <!-- Phone number field -->
             </div>
             <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
             <button class="form-btn" name="send" type="submit">
@@ -1313,7 +1402,9 @@
             <div class="alert"></div>
         </form>
     </div>
-        </section>
+</section>
+
+
       </article>
       
     </div>
