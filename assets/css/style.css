@@ -1611,11 +1611,7 @@
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.close: hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-}
+
 
 /* Eye Icon */
 .eye-icon {
@@ -1690,3 +1686,16 @@ padding: 5px;
   }
 }
 
+.alert {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
+}
+
+.success-alert {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block; /* Show when success */
+}
