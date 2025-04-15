@@ -194,3 +194,4 @@ window.onkeydown = function(event) {
 document.querySelectorAll('[data-src]').forEach(img => {
   img.addEventListener('click', () => openModal(img));
 });
+

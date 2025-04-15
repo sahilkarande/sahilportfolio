@@ -357,7 +357,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 1px 100px;
+    padding: 1px 0px;
 }
   .navbar-link {
   color: var(--light-gray);
@@ -1638,7 +1638,7 @@
 
 @keyframes smoothBlink {
   0%, 100% {
-      opacity: 1;
+      opacity: 10;
   }
   25%, 75% {
       opacity: 0.5;
