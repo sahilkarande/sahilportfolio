@@ -1,0 +1,47 @@
+/* Wrapper for full-screen overlay */
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: #111;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loader layout: 20 dots in a row */
+.loader-1 {
+  display: flex;
+  gap: 10px;
+}
+
+/* Common dot styles */
+.loader-1 div {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Caterpillar alternating colors (white, grey, yellow) */
+.shape-1  { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-2  { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-3  { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-4  { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-5  { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-6  { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-7  { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-8  { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-9  { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-10 { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-11 { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-12 { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-13 { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-14 { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-15 { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-16 { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-17 { background-color: grey;      box-shadow: 0 0 10px grey; }
+.shape-18 { background-color: #FFDB70;   box-shadow: 0 0 10px #FFDB70; }
+.shape-19 { background-color: white;     box-shadow: 0 0 10px white; }
+.shape-20 { background-color: grey;      box-shadow: 0 0 10px grey; }

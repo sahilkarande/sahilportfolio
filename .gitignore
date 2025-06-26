@@ -1,6 +1,0 @@
-# Ignore environment variables file
-.env
-
-# Other entries can go here
-*.log
-node_modules/

@@ -1,0 +1,123 @@
+<!-- projects.html -->
+{% extends 'layout.html' %}
+{% set active_page = 'projects' %}
+{% block content %}
+<br><br><br>
+<header>
+  <h2 class="h2 article-title">Projects</h2>
+</header>
+
+<section class="projects">
+  <ul class="filter-list">
+    <li class="filter-item"><button class="active" data-filter-btn="All">All</button></li>
+    <li class="filter-item"><button data-filter-btn="Web Development">Web Development</button></li>
+    <li class="filter-item"><button data-filter-btn="Data Science">Data Science</button></li>
+  </ul>
+
+  <div class="filter-select-box">
+    <button class="filter-select" data-select>
+      <div class="select-value" data-select-value>Select category</div>
+      <div class="select-icon">
+        <ion-icon name="chevron-down"></ion-icon>
+      </div>
+    </button>
+    <ul class="select-list">
+      <li class="select-item"><button data-select-item="All">All</button></li>
+      <li class="select-item"><button data-select-item="Web Development">Web Development</button></li>
+      <li class="select-item"><button data-select-item="Data Science">Data Science</button></li>
+    </ul>
+  </div>
+
+  <ul class="project-list">
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/furrifyweb.jpg') }}" alt="Furrifyweb" loading="lazy">
+        </figure>
+        <h3 class="project-title">Furrify - A Pet Community</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Data Science">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/walmart.png') }}" alt="Walmart Sales Prediction Dashboard" loading="lazy">
+        </figure>
+        <h3 class="project-title">Walmart Sales Prediction Dashboard</h3>
+        <p class="project-category">Data Science</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/Apnabankweb (1).png') }}" alt="Apna Bank" loading="lazy">
+        </figure>
+        <h3 class="project-title">Apna Bank</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Data Science">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/stocksproject (1).png') }}" alt="Stocks Prediction" loading="lazy">
+        </figure>
+        <h3 class="project-title">Stocks Prediction For BSE And NSE Companies</h3>
+        <p class="project-category">Data Science</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/basicportfolio (1).png') }}" alt="Basic Portfolio" loading="lazy">
+        </figure>
+        <h3 class="project-title">Basic Portfolio</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/encipherX.png') }}" alt="EncipherX" loading="lazy">
+        </figure>
+        <h3 class="project-title">EncipherX Website</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/happiness.png') }}" alt="Student Mentoring System" loading="lazy">
+        </figure>
+        <h3 class="project-title">Happiness Center - Online Student Mentoring System</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Web Development">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/GDSC.png') }}" alt="GDSC Website" loading="lazy">
+        </figure>
+        <h3 class="project-title">GDSC Website</h3>
+        <p class="project-category">Web Development</p>
+      </a>
+    </li>
+
+    <li class="project-item active" data-filter-item data-category="Data Science">
+      <a href="#">
+        <figure class="project-img">
+          <img src="{{ url_for('static', filename='assets/images/drugclassification (1).png') }}" alt="Drug Classification" loading="lazy">
+        </figure>
+        <h3 class="project-title">Drug Classification</h3>
+        <p class="project-category">Data Science</p>
+      </a>
+    </li>
+  </ul>
+</section>
+{% endblock %}
