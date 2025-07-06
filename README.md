@@ -1,6 +1,6 @@
-#Personal Portfolio Website
+# Personal Portfolio Website
 
-Welcome to my personal portfolio — a fully responsive and dynamic website built using **Flask**. It showcases my work in data science, machine learning, web development, and cloud technologies.
+Welcome to my portfolio — a fully responsive and dynamic website built using **Flask**. It showcases my work in data science, machine learning, web development, and cloud technologies.
 
 ---
 
